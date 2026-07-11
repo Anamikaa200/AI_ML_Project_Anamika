@@ -32,6 +32,9 @@ Project_10(Chatbot for Health Insurance):--
 
 House_Price_Prediction URL:--
 
+Project 11 (Movie Review Analyser)
+LIVE WEBSITE: https://movieanalyser-netflix.streamlit.app/
+
 
 
 Insurance Purchase Prediction URl:--
