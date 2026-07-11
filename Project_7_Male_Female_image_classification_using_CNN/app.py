@@ -94,5 +94,5 @@ if uploaded:
 
 st.markdown("---")
 st.markdown("### Connect with Me")
-st.markdown("- GitHub: https://github.com/Anamikaa200")
+st.markdown("- GitHub: https://github.com/Anamikaa200/")
 st.markdown("- LinkedIn: https://www.linkedin.com/in/anamika-yadav-64b688340/")
