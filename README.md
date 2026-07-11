@@ -1,5 +1,5 @@
 Project_2(Calculation of Outliers) URL :- 
-
+https://aimlprojectanamika-ubhnkuy5d8ijzfxhmymsps.streamlit.app/
 
 
 Project_3(Canada's Capital yearwise Income) URL :- 
