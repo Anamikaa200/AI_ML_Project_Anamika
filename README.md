@@ -20,7 +20,10 @@ https://aimlprojectanamika-vzwara2fvkpo5cfbsa5tcd.streamlit.app/
 
 
 
-Project_6(Iris Clustering Using K-means Algorithm) URL :- 
+Project_6(Iris Clustering Using K-means Algorithm) URL :-  
+
+https://aimlprojectanamika-aza8apqfqjgso2eyswf6at.streamlit.app/
+
 
 
 
