@@ -70,7 +70,7 @@ st.markdown(
     </a>
     <br><br>
     <a href="https://www.linkedin.com/in/anamika-yadav-64b688340/" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-Abhay%20Kumar%20Gupta-blue?style=for-the-badge&logo=linkedin">
+        <img src="https://img.shields.io/badge/LinkedIn-Anamika%Yadav-blue?style=for-the-badge&logo=linkedin">
     </a>
 </div>
 """,
