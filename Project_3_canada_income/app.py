@@ -195,19 +195,3 @@ with col2:
             use_container_width=True
         )
 
-st.markdown("---")
-st.caption("© 2026 Anamika Yadav | Built with ❤️ using Streamlit & Scikit-Learn")
-with c1:
-    st.link_button(
-        "🐙 GitHub Profile",
-        "https://github.com/Anamikaa200"
-    )
-
-with c2:
-    st.link_button(
-        "💼 LinkedIn Profile",
-        "www.linkedin.com/in/anamika-yadav-64b688340"
-    )
-
-st.markdown("---")
-st.caption("© 2026 Abhay Kumar Gupta | Built with ❤️ using Streamlit & Scikit-Learn")
