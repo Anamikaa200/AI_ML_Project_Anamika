@@ -65,11 +65,11 @@ st.markdown(
     """
 <div style="text-align:center;">
     <h3>Connect with Me</h3>
-    <a href="https://github.com/Abhay-cody" target="_blank">
+    <a href="https://github.com/Anamikaa200" target="_blank">
         <img src="https://img.shields.io/badge/GitHub-Abhay--cody-black?style=for-the-badge&logo=github">
     </a>
     <br><br>
-    <a href="https://www.linkedin.com/in/abhay-kumar-gupta-104a18397" target="_blank">
+    <a href="https://www.linkedin.com/in/anamika-yadav-64b688340/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-Abhay%20Kumar%20Gupta-blue?style=for-the-badge&logo=linkedin">
     </a>
 </div>
