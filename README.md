@@ -21,11 +21,8 @@ Project_6(Iris Clustering Using K-means Algorithm) URL :-
 Project_7(Male_Female_image_classification_using_CNN) URL:-
 
 
+
 Project_8(Iris Flower Species Prediction Using KNN) URL :-
-
-
-
-Project_8(Covid_19_from_Chest_X_Ray) Website URL:--
 
 
 
@@ -34,6 +31,7 @@ Project_10(Chatbot for Health Insurance):--
 
 
 House_Price_Prediction URL:--
+
 
 
 Insurance Purchase Prediction URl:--
