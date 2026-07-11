@@ -16,6 +16,8 @@ https://aimlprojectanamika-e7w924pkt6yvuhtjseinpa.streamlit.app/
 
 Project_5(Male_Female_Image_Classification) URL :-
 
+https://aimlprojectanamika-vzwara2fvkpo5cfbsa5tcd.streamlit.app/
+
 
 
 Project_6(Iris Clustering Using K-means Algorithm) URL :- 
