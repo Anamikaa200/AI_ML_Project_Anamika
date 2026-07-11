@@ -60,19 +60,4 @@ if uploaded_file is not None:
     st.success(classes[prediction])
 
 # About the developer
-st.markdown("---")
-st.markdown(
-    """
-<div style="text-align:center;">
-    <h3>Connect with Me</h3>
-    <a href="https://github.com/Anamikaa200" target="_blank">
-        <img src="https://img.shields.io/badge/GitHub-Abhay--cody-black?style=for-the-badge&logo=github">
-    </a>
-    <br><br>
-    <a href="https://www.linkedin.com/in/anamika-yadav-64b688340/" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-Anamika%Yadav-blue?style=for-the-badge&logo=linkedin">
-    </a>
-</div>
-""",
-    unsafe_allow_html=True,
-)
+# st.markdown("---")
