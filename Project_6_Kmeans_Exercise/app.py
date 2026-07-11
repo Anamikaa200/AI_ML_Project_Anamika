@@ -252,7 +252,7 @@ st.divider()
 st.header("👨‍💻 About Developer")
 
 st.markdown("""
-### **Abhay Kumar Gupta**
+### **Anamika Yadav**
 
 🎓 B.Tech Computer Science & Engineering Student
 
@@ -264,11 +264,11 @@ st.markdown("""
 
 🐙 **GitHub**
 
-https://github.com/Abhay-cody
+https://github.com/Anamikaa200
 
 💼 **LinkedIn**
 
-https://www.linkedin.com/in/abhay-kumar-gupta-104a18397
+https://www.linkedin.com/in/anamika-yadav-64b688340/
 """)
 
 st.divider()
