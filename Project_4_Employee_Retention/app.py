@@ -320,11 +320,11 @@ st.markdown("""
 
 ### 👨‍💻 Developer
 
-**Abhay Kumar Gupta**
+**Anamika Yadav**
 
-🔗 <a href="https://github.com/Abhay-cody" target="_blank">GitHub</a>
+🔗 <a href="https://github.com/Anamikaa200" target="_blank">GitHub</a>
 
-🔗 <a href="https://www.linkedin.com/in/abhay-kumar-gupta-104a18397" target="_blank">LinkedIn</a>
+🔗 <a href="https://www.linkedin.com/in/anamika-yadav-64b688340/" target="_blank">LinkedIn</a>
 
 </div>
 """, unsafe_allow_html=True)
