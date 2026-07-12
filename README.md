@@ -29,7 +29,7 @@ https://aimlprojectanamika-aza8apqfqjgso2eyswf6at.streamlit.app/
 
 Project_7(Male_Female_image_classification_using_CNN) URL:-
 
-
+https://aimlprojectanamika-7htyruuftievfur6iqztoy.streamlit.app/
 
 Project_8(Iris Flower Species Prediction Using KNN) URL :-
 
