@@ -60,7 +60,7 @@ with st.sidebar:
 
     github_url = "https://github.com/Anamikaa200"
 
-    linkedin_url = "www.linkedin.com/in/anamika-yadav-64b688340"
+    linkedin_url = "https://www.linkedin.com/in/anamika-yadav-64b688340"
 
     try:
         st.link_button("📂 GitHub Profile", github_url)
@@ -127,10 +127,20 @@ def load_website():
         )
     }
 
+    try:
+
     response = requests.get(
         URL,
         headers=headers,
         timeout=30,
+    )
+
+    response.raise_for_status()
+
+except requests.exceptions.RequestException as e:
+
+    raise RuntimeError(
+        f"Unable to access the website: {e}"
     )
 
     response.raise_for_status()
@@ -322,7 +332,7 @@ ANSWER
 
             else:
 
-                st.warning("Gemini returned an empty response.")
+                st.warning("OpenAI returned an empty response.")
 
         except Exception as e:
 
