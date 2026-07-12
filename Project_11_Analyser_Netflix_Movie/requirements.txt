@@ -1,7 +1,0 @@
-streamlit
-pandas
-transformers
-torch
-sentencepiece
-protobuf
-accelerate
