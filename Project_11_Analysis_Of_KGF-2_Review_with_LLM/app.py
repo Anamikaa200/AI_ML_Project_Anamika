@@ -16,7 +16,7 @@ st.set_page_config(
 # -------------------------------------------------
 
 st.image(
-    "KGF_2.jpg",
+    "https://github.com/Anamikaa200/AI_ML_Project_Anamika/blob/main/Project_11_Analysis_Of_KGF-2_Review_with_LLM/KGF_2.jpg",
     use_container_width=True
 )
 # -------------------------------------------------
