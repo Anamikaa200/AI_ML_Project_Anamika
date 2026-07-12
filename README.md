@@ -26,6 +26,10 @@ Project_8(Iris Flower Species Prediction Using KNN) URL :-
 
 https://aimlprojectanamika-kvvnz2vrfbtsw9eepmxadn.streamlit.app/
 
+Project_9 (Male_Female_Eye_Classification_CNN) URL:-
+
+https://aimlprojectanamika-fcyck6b6qfs9nku9cjbdpv.streamlit.app/
+
 Project_10(Chatbot for Health Insurance):--
 
 https://aimlprojectanamika-4tdymlxtqektvdnd9s5r36.streamlit.app/
