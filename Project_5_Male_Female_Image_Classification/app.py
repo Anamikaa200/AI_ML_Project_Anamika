@@ -58,6 +58,39 @@ if uploaded_file is not None:
 
     st.subheader("Prediction")
     st.success(classes[prediction])
+# -----------------------------
+# About Developer
+# -----------------------------
+st.header("👨‍💻 About Developer")
 
-# About the developer
-# st.markdown("---")
+st.markdown("""
+### **Anamika Yadav**
+
+🎓 B.Tech Computer Science & Engineering Student
+
+💻 Passionate about Machine Learning, Data Science, Python, and AI.
+
+---
+
+### 🔗 Connect with Me
+
+🐙 **GitHub**
+
+https://github.com/Anamikaa200
+
+💼 **LinkedIn**
+
+https://www.linkedin.com/in/anamika-yadav-64b688340/
+""")
+
+st.divider()
+
+st.markdown(
+    """
+<div style='text-align:center'>
+<h4>Made with ❤️ using Streamlit</h4>
+<p>© 2026 Anamika Yadav</p>
+</div>
+""",
+    unsafe_allow_html=True
+)
