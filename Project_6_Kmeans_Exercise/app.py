@@ -277,7 +277,7 @@ st.markdown(
     """
 <div style='text-align:center'>
 <h4>Made with ❤️ using Streamlit</h4>
-<p>© 2026 Abhay Kumar Gupta</p>
+<p>© 2026 Anamika Yadav</p>
 </div>
 """,
     unsafe_allow_html=True
