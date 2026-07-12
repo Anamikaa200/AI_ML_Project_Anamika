@@ -16,9 +16,9 @@ from tensorflow.keras.preprocessing import image
 
 import matplotlib.pyplot as plt
 
-# ---------------------------------------------------------
-# Page Configuration
-# ---------------------------------------------------------
+# ==========================================================
+# PAGE CONFIG
+# ==========================================================
 
 st.set_page_config(
     page_title="Male vs Female Eye Classification",
@@ -27,12 +27,14 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ---------------------------------------------------------
-# Custom CSS
-# ---------------------------------------------------------
+# ==========================================================
+# PREMIUM GLASSMORPHISM CSS
+# ==========================================================
 
 st.markdown("""
 <style>
+
+/* Hide Streamlit Branding */
 
 #MainMenu{
 visibility:hidden;
@@ -46,166 +48,391 @@ header{
 visibility:hidden;
 }
 
+/* ===========================
+BACKGROUND
+=========================== */
+
 .stApp{
-background-color:#F4F8FB;
-}
 
-/* Header */
+background:
+linear-gradient(
+135deg,
+#07111F 0%,
+#0F172A 35%,
+#16213E 70%,
+#1D3557 100%
+);
 
-.main-header{
-
-background:linear-gradient(90deg,#0F62FE,#2563EB,#4F46E5);
-
-padding:25px;
-
-border-radius:18px;
-
-text-align:center;
-
-box-shadow:0px 8px 18px rgba(0,0,0,0.25);
-
-margin-bottom:30px;
-
-}
-
-.main-header h1{
+background-attachment:fixed;
 
 color:white;
 
-font-size:42px;
+}
+
+/* Main Container */
+
+.block-container{
+
+padding-top:2rem;
+
+padding-bottom:2rem;
+
+max-width:1400px;
+
+}
+
+/* ===========================
+HERO CARD
+=========================== */
+
+.hero{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:25px;
+
+padding:35px;
+
+box-shadow:0px 10px 40px rgba(0,0,0,.35);
+
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:48px;
 
 font-weight:800;
+
+color:white;
 
 margin-bottom:8px;
 
 }
 
-.main-header p{
+.hero h3{
 
-color:white;
+font-size:20px;
 
-font-size:18px;
+font-weight:400;
+
+color:#CBD5E1;
 
 }
 
-/* Cards */
+/* ===========================
+GLASS CARD
+=========================== */
 
-.card{
+.glass{
 
-background:white;
+background:rgba(255,255,255,.08);
 
-padding:20px;
+backdrop-filter:blur(18px);
 
-border-radius:20px;
+-webkit-backdrop-filter:blur(18px);
 
-box-shadow:0 10px 25px rgba(0,0,0,.08);
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:22px;
+
+padding:25px;
 
 margin-bottom:20px;
 
-}
-
-/* Prediction Card */
-
-.prediction{
-
-background:linear-gradient(135deg,#16A34A,#059669);
+box-shadow:0 8px 35px rgba(0,0,0,.28);
 
 color:white;
 
-padding:25px;
+}
 
-border-radius:20px;
+/* ===========================
+RESULT CARD
+=========================== */
+
+.result{
+
+background:linear-gradient(
+135deg,
+#2563EB,
+#4F46E5
+);
+
+border-radius:22px;
+
+padding:30px;
+
+color:white;
 
 text-align:center;
 
-font-size:24px;
-
-font-weight:bold;
+box-shadow:0 10px 35px rgba(37,99,235,.35);
 
 }
 
-/* Footer */
-
-.footer{
-
-text-align:center;
-
-padding:25px;
-
-font-size:18px;
-
-}
-
-/* Uploader */
-
-.stFileUploader{
-
-border:2px dashed #2563EB;
-
-padding:18px;
-
-border-radius:15px;
-
-}
-
-/* Sidebar */
+/* ===========================
+SIDEBAR
+=========================== */
 
 [data-testid="stSidebar"]{
 
-background:#0F172A;
+background:#08111D;
 
 }
 
 [data-testid="stSidebar"] *{
 
+color:white !important;
+
+}
+
+/* ===========================
+FILE UPLOADER
+=========================== */
+
+.stFileUploader{
+
+background:rgba(255,255,255,.06);
+
+padding:18px;
+
+border-radius:18px;
+
+border:2px dashed #60A5FA;
+
+}
+
+/* ===========================
+BUTTON
+=========================== */
+
+.stButton>button{
+
+background:linear-gradient(
+90deg,
+#2563EB,
+#4F46E5
+);
+
 color:white;
+
+border:none;
+
+border-radius:15px;
+
+padding:.7rem 2rem;
+
+font-size:16px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.stButton>button:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ===========================
+METRIC
+=========================== */
+
+[data-testid="metric-container"]{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-radius:18px;
+
+padding:18px;
+
+border:1px solid rgba(255,255,255,.12);
+
+}
+
+/* ===========================
+TEXT
+=========================== */
+
+h1,h2,h3,h4,h5,h6{
+
+color:white;
+
+}
+
+p{
+
+color:#E5E7EB;
+
+}
+
+label{
+
+color:white !important;
+
+}
+
+small{
+
+color:#CBD5E1;
+
+}
+
+/* ===========================
+SUCCESS
+=========================== */
+
+.stSuccess{
+
+border-radius:15px;
+
+}
+
+.stInfo{
+
+border-radius:15px;
+
+}
+
+.stWarning{
+
+border-radius:15px;
+
+}
+
+.stError{
+
+border-radius:15px;
+
+}
+
+/* ===========================
+PROGRESS BAR
+=========================== */
+
+.stProgress > div > div{
+
+background:#3B82F6;
+
+}
+
+/* ===========================
+IMAGE
+=========================== */
+
+img{
+
+border-radius:18px;
+
+}
+
+/* ===========================
+HORIZONTAL LINE
+=========================== */
+
+hr{
+
+border:1px solid rgba(255,255,255,.08);
 
 }
 
 </style>
 """, unsafe_allow_html=True)
 
+# ==========================================================
+# HERO SECTION
+# ==========================================================
+
 st.markdown("""
-<div class="main-header">
-<h1>👁 Male vs Female Eye Classification</h1>
-<p>Deep Learning based Eye Gender Prediction using CNN</p>
+<div class="hero">
+
+<h1>
+👁 Male vs Female Eye Classification
+</h1>
+
+<h3>
+Deep Learning based Gender Classification using CNN
+</h3>
+
 </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# Sidebar
-# ============================================================
+# ==========================================================
+# PROFESSIONAL SIDEBAR
+# ==========================================================
 
 with st.sidebar:
 
-    st.title("👨‍💻 Project Information")
+    st.markdown("# 🤖 AI Dashboard")
 
     st.markdown("---")
 
     st.markdown("""
-### 📌 About Project
+### 📌 Project
 
-This project uses a **Convolutional Neural Network (CNN)** to classify eye images into:
+This application uses a **Convolutional Neural Network (CNN)** to classify eye images as:
 
 - 👨 Male
 - 👩 Female
 
-The model is automatically trained if no saved model is found.
+Upload an eye image and the trained model will predict its class with a confidence score.
 """)
 
     st.markdown("---")
 
+    st.subheader("⚙ Model Details")
+
+    st.metric("Architecture", "CNN")
     st.metric("Image Size", "64 × 64")
-    st.metric("Model", "CNN")
     st.metric("Framework", "TensorFlow")
+    st.metric("Input Channels", "RGB")
 
     st.markdown("---")
 
-    st.info("💡 Upload a clear eye image for the best prediction.")
+    st.subheader("📂 Dataset")
 
-# ============================================================
-# Constants
-# ============================================================
+    st.info(
+        """
+Dataset Structure
+
+train/
+
+├── male/
+
+└── female/
+"""
+    )
+
+    st.markdown("---")
+
+    st.subheader("💡 Tips")
+
+    st.success(
+        """
+✔ Upload a clear eye image.
+
+✔ JPG / JPEG / PNG supported.
+
+✔ Better lighting improves prediction.
+"""
+    )
+
+# ==========================================================
+# CONSTANTS
+# ==========================================================
 
 IMG_SIZE = (64, 64)
 
@@ -215,16 +442,16 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 TRAIN_DIR = os.path.join(BASE_DIR, "train")
 
-# ============================================================
-# Load or Train Model
-# ============================================================
+# ==========================================================
+# LOAD OR TRAIN MODEL
+# ==========================================================
 
 @st.cache_resource
 def get_model():
 
-    # --------------------------------------------------------
-    # Load existing model
-    # --------------------------------------------------------
+    # ------------------------------------------------------
+    # Load Existing Model
+    # ------------------------------------------------------
 
     if os.path.exists(MODEL_PATH):
 
@@ -232,19 +459,19 @@ def get_model():
 
         return model, None
 
-    # --------------------------------------------------------
-    # Check dataset
-    # --------------------------------------------------------
+    # ------------------------------------------------------
+    # Check Dataset
+    # ------------------------------------------------------
 
     if not os.path.exists(TRAIN_DIR):
 
-        st.error("❌ train folder not found.")
+        st.error("❌ train/ folder not found.")
 
         st.stop()
 
-    # --------------------------------------------------------
-    # Prepare Dataset
-    # --------------------------------------------------------
+    # ------------------------------------------------------
+    # Dataset Generator
+    # ------------------------------------------------------
 
     datagen = ImageDataGenerator(
         rescale=1./255,
@@ -267,9 +494,23 @@ def get_model():
         subset="validation"
     )
 
-    # --------------------------------------------------------
-    # CNN Model
-    # --------------------------------------------------------
+    # ======================================================
+    # MODEL CARD
+    # ======================================================
+
+    st.markdown("""
+<div class="glass">
+
+<h2 style="text-align:center;">
+🧠 Building CNN Model
+</h2>
+
+</div>
+""", unsafe_allow_html=True)
+
+    # ------------------------------------------------------
+    # CNN MODEL
+    # ------------------------------------------------------
 
     model = Sequential([
 
@@ -315,39 +556,62 @@ def get_model():
     ])
 
     model.compile(
+
         optimizer="adam",
+
         loss="binary_crossentropy",
+
         metrics=["accuracy"]
+
     )
 
-    # --------------------------------------------------------
-    # Train Model
-    # --------------------------------------------------------
+    # ------------------------------------------------------
+    # TRAIN MODEL
+    # ------------------------------------------------------
 
-    with st.spinner("🔄 Training CNN Model... Please wait."):
+    progress = st.progress(0)
 
-        history = model.fit(
-            train_gen,
-            validation_data=val_gen,
-            epochs=5,
-            verbose=1
-        )
+    status = st.empty()
 
-    # --------------------------------------------------------
-    # Save Model
-    # --------------------------------------------------------
+    status.info("🚀 Training model...")
+
+    history = model.fit(
+
+        train_gen,
+
+        validation_data=val_gen,
+
+        epochs=5,
+
+        verbose=1
+
+    )
+
+    progress.progress(100)
+
+    status.success("✅ Training Completed")
+
+    # ------------------------------------------------------
+    # SAVE MODEL
+    # ------------------------------------------------------
 
     model.save(MODEL_PATH)
 
-    # --------------------------------------------------------
-    # Display Accuracy
-    # --------------------------------------------------------
+    # ======================================================
+    # TRAINING GRAPH
+    # ======================================================
 
-    st.success("✅ Model trained successfully!")
+    st.markdown("""
+<div class="glass">
 
-    st.subheader("📈 Training Accuracy")
+<h2 style="text-align:center;">
+📈 Training Accuracy
+</h2>
 
-    fig, ax = plt.subplots(figsize=(7,4))
+</div>
+""", unsafe_allow_html=True)
+
+    fig, ax = plt.subplots(figsize=(9,4))
 
     ax.plot(
         history.history["accuracy"],
@@ -365,37 +629,47 @@ def get_model():
 
     ax.set_ylabel("Accuracy")
 
+    ax.set_title("CNN Training Performance")
+
+    ax.grid(alpha=0.3)
+
     ax.legend()
 
     st.pyplot(fig)
 
     return model, train_gen.class_indices
 
-# ============================================================
-# Load Model
-# ============================================================
+# ==========================================================
+# LOAD MODEL
+# ==========================================================
 
 model, class_idx = get_model()
 
 if class_idx is None:
 
     class_idx = {
-        "female":0,
-        "male":1
+
+        "female": 0,
+
+        "male": 1
+
     }
-    
-# ============================================================
-# Upload Section
-# ============================================================
+
+# ==========================================================
+# GLASS UPLOAD SECTION
+# ==========================================================
 
 st.markdown("""
-<div class="card">
-    <h2 style="text-align:center;color:#2563EB;">
-        📤 Upload Eye Image
-    </h2>
-    <p style="text-align:center;color:gray;">
-        Upload a JPG, JPEG or PNG image of an eye for prediction.
-    </p>
+<div class="glass">
+
+<h2 style="text-align:center;">
+📤 Upload Eye Image
+</h2>
+
+<p style="text-align:center;color:#CBD5E1;">
+Supported Formats : JPG • JPEG • PNG
+</p>
+
 </div>
 """, unsafe_allow_html=True)
 
@@ -404,25 +678,25 @@ uploaded = st.file_uploader(
     type=["jpg", "jpeg", "png"]
 )
 
-# ============================================================
-# Prediction
-# ============================================================
+# ==========================================================
+# IMAGE PREDICTION
+# ==========================================================
 
 if uploaded is not None:
 
-    col1, col2 = st.columns([1, 1])
+    left, right = st.columns([1, 1])
 
-    # --------------------------------------------------------
-    # Left Column : Image
-    # --------------------------------------------------------
+    # ======================================================
+    # LEFT PANEL
+    # ======================================================
 
-    with col1:
+    with left:
 
         st.markdown("""
-        <div class="card">
-            <h3 style="text-align:center;">
-                🖼 Uploaded Image
-            </h3>
+        <div class="glass">
+        <h2 style="text-align:center;">
+        🖼 Uploaded Image
+        </h2>
         """, unsafe_allow_html=True)
 
         img = image.load_img(
@@ -440,13 +714,13 @@ if uploaded is not None:
 
         st.markdown("</div>", unsafe_allow_html=True)
 
-    # --------------------------------------------------------
-    # Right Column : Prediction
-    # --------------------------------------------------------
+    # ======================================================
+    # RIGHT PANEL
+    # ======================================================
 
-    with col2:
+    with right:
 
-        with st.spinner("🔍 Analyzing Image..."):
+        with st.spinner("🤖 AI is analyzing the image..."):
 
             prediction = float(
                 model.predict(arr, verbose=0)[0][0]
@@ -455,29 +729,43 @@ if uploaded is not None:
         if prediction >= 0.5:
 
             label = "👨 Male"
+
             confidence = prediction * 100
 
-            result_color = "#059669"
+            color = "#2563EB"
+
+            emoji = "👨"
 
         else:
 
             label = "👩 Female"
+
             confidence = (1 - prediction) * 100
 
-            result_color = "#EC4899"
+            color = "#EC4899"
+
+            emoji = "👩"
 
         st.markdown(f"""
         <div style="
-            background:{result_color};
-            color:white;
-            padding:25px;
-            border-radius:18px;
+            background:linear-gradient(135deg,{color},#4F46E5);
+            padding:35px;
+            border-radius:25px;
             text-align:center;
-            box-shadow:0px 8px 18px rgba(0,0,0,0.2);
+            color:white;
+            box-shadow:0px 15px 35px rgba(0,0,0,.35);
         ">
-            <h2>Prediction Result</h2>
-            <h1>{label}</h1>
-            <h3>Confidence: {confidence:.2f}%</h3>
+
+        <h3>Prediction Result</h3>
+
+        <h1 style="font-size:55px;">
+        {emoji}
+        </h1>
+
+        <h1>{label}</h1>
+
+        <h2>{confidence:.2f}% Confidence</h2>
+
         </div>
         """, unsafe_allow_html=True)
 
@@ -485,176 +773,283 @@ if uploaded is not None:
 
         st.subheader("📊 Confidence Score")
 
-        st.progress(min(int(confidence), 100))
+        st.progress(int(confidence))
 
         st.metric(
-            label="Prediction Confidence",
-            value=f"{confidence:.2f}%"
+            "Prediction Confidence",
+            f"{confidence:.2f}%"
         )
 
-        st.success(f"Prediction: {label}")
+        st.success(f"Prediction : {label}")
 
-        st.info(
-            "The confidence score indicates how certain the model is about its prediction."
-        )
+        if confidence >= 95:
 
-# ============================================================
-# No Image Uploaded
-# ============================================================
+            st.success(
+                "🎯 Excellent confidence. The model is highly certain."
+            )
+
+        elif confidence >= 80:
+
+            st.info(
+                "👍 Good confidence prediction."
+            )
+
+        else:
+
+            st.warning(
+                "⚠ Confidence is relatively low. Try another clearer image."
+            )
+
+# ==========================================================
+# NO IMAGE
+# ==========================================================
 
 else:
 
     st.markdown("""
-    <div class="card" style="text-align:center;">
-        <h3>📁 No Image Uploaded</h3>
-        <p>Please upload an eye image to begin the prediction.</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-# ============================================================
-# Footer
-# ============================================================
 
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("---")
+<div class="glass">
 
-st.markdown("""
-<style>
+<h2 style="text-align:center;">
+📂 Waiting for Image...
+</h2>
 
-.footer-card{
-    background: linear-gradient(135deg,#0F172A,#1E293B);
-    color:white;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0px 10px 25px rgba(0,0,0,0.25);
-}
+<p style="text-align:center;color:#CBD5E1;">
 
-.footer-card h2{
-    color:#60A5FA;
-    margin-bottom:10px;
-}
+Upload an eye image to begin prediction.
 
-.footer-card p{
-    font-size:17px;
-    margin:8px;
-}
+</p>
 
-.tech-box{
-    background:#EEF4FF;
-    padding:20px;
-    border-radius:18px;
-    box-shadow:0px 5px 15px rgba(0,0,0,0.08);
-    margin-top:15px;
-}
+</div>
 
-</style>
 """, unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+# ==========================================================
+# PROJECT SUMMARY
+# ==========================================================
 
-# ============================================================
-# Technologies Used
-# ============================================================
-
-with col1:
-
-    st.markdown("""
-    <div class="tech-box">
-
-    <h2 style="color:#2563EB;">
-    🛠 Technologies Used
-    </h2>
-
-    ✅ Python
-
-    ✅ TensorFlow / Keras
-
-    ✅ CNN (Convolutional Neural Network)
-
-    ✅ NumPy
-
-    ✅ Matplotlib
-
-    ✅ Streamlit
-
-    </div>
-    """, unsafe_allow_html=True)
-
-# ============================================================
-# Project Features
-# ============================================================
-
-with col2:
-
-    st.markdown("""
-    <div class="tech-box">
-
-    <h2 style="color:#2563EB;">
-    ⭐ Features
-    </h2>
-
-    ✔ Automatic CNN Model Training
-
-    ✔ Image Upload
-
-    ✔ Eye Classification
-
-    ✔ Confidence Score
-
-    ✔ Interactive Dashboard
-
-    ✔ Responsive UI
-
-    </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-# ============================================================
-# Developer Section
-# ============================================================
+st.write("")
 
 st.markdown("""
-<div class="footer-card">
+<div class="glass">
 
-<h2>👨‍💻 Connect with Me</h2>
+<h2 style="text-align:center;">
+📊 Project Highlights
+</h2>
 
-<p>
-🐱 <b>GitHub</b><br>
-<a href="https://github.com/Anamikaa200" target="_blank" style="color:#60A5FA;text-decoration:none;">
-https://github.com/Anamikaa200
-</a>
-</p>
+</div>
+""", unsafe_allow_html=True)
 
-<p>
-💼 <b>LinkedIn</b><br>
-<a href="https://www.linkedin.com/in/anamika-yadav-64b688340"
-target="_blank"
-style="color:#60A5FA;text-decoration:none;">
-www.linkedin.com/in/anamika-yadav-64b688340
-</a>
-</p>
+c1, c2, c3 = st.columns(3)
 
-<p style="margin-top:20px;">
-Made with ❤️ using Streamlit & TensorFlow
+with c1:
+    st.metric("Model", "CNN")
+
+with c2:
+    st.metric("Classes", "2")
+
+with c3:
+    st.metric("Input Size", "64×64")
+
+# ==========================================================
+# TECHNOLOGIES & FEATURES
+# ==========================================================
+
+st.write("")
+st.markdown("""
+<div class="glass">
+<h2 style="text-align:center;">
+🚀 Technologies & Features
+</h2>
+</div>
+""", unsafe_allow_html=True)
+
+tech_col, feature_col = st.columns(2)
+
+with tech_col:
+
+    st.markdown("""
+<div class="glass">
+
+<h3 style="text-align:center;">
+🛠 Technologies Used
+</h3>
+
+✅ Python
+
+✅ TensorFlow
+
+✅ Keras
+
+✅ Convolutional Neural Network (CNN)
+
+✅ NumPy
+
+✅ Matplotlib
+
+✅ Streamlit
+
+</div>
+""", unsafe_allow_html=True)
+
+with feature_col:
+
+    st.markdown("""
+<div class="glass">
+
+<h3 style="text-align:center;">
+⭐ Features
+</h3>
+
+✔ Eye Image Classification
+
+✔ Automatic Model Loading
+
+✔ CNN Training
+
+✔ Real-Time Prediction
+
+✔ Confidence Score
+
+✔ Responsive Dashboard
+
+✔ Modern Glassmorphism UI
+
+</div>
+""", unsafe_allow_html=True)
+
+# ==========================================================
+# MODEL INFORMATION
+# ==========================================================
+
+st.write("")
+
+st.markdown("""
+<div class="glass">
+
+<h2 style="text-align:center;">
+📖 About This Model
+</h2>
+
+<p style="text-align:center; color:#E2E8F0; font-size:17px;">
+
+This application uses a Convolutional Neural Network (CNN) trained on
+male and female eye images.
+
+The uploaded image is resized to <b>64 × 64</b> pixels,
+normalized, and passed through the CNN to predict the gender
+based on the eye image.
+
 </p>
 
 </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# Copyright
-# ============================================================
+# ==========================================================
+# DEVELOPER SECTION
+# ==========================================================
+
+st.write("")
+
+st.markdown("""
+<div style="
+background:linear-gradient(135deg,#2563EB,#4F46E5);
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0px 15px 40px rgba(0,0,0,.35);
+">
+
+<h1 style="color:white;">
+👨‍💻 Developer
+</h1>
+
+<h2 style="color:white;">
+Anamika Yadav
+</h2>
+
+<p style="color:#E5E7EB;font-size:18px;">
+AI • Machine Learning • Deep Learning
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+# ==========================================================
+# SOCIAL LINKS
+# ==========================================================
+
+st.write("")
+
+social1, social2 = st.columns(2)
+
+with social1:
+
+    st.markdown("""
+<div class="glass" style="text-align:center;">
+
+<h3>
+🐱 GitHub
+</h3>
+
+<a href="https://github.com/Anamikaa200"
+target="_blank"
+style="
+color:#60A5FA;
+font-size:18px;
+text-decoration:none;
+">
+github.com/Anamikaa200
+</a>
+
+</div>
+""", unsafe_allow_html=True)
+
+with social2:
+
+    st.markdown("""
+<div class="glass" style="text-align:center;">
+
+<h3>
+💼 LinkedIn
+</h3>
+
+<a href="https://www.linkedin.com/in/anamika-yadav-64b688340"
+target="_blank"
+style="
+color:#60A5FA;
+font-size:18px;
+text-decoration:none;
+">
+linkedin.com/in/anamika-yadav-64b688340
+</a>
+
+</div>
+""", unsafe_allow_html=True)
+
+# ==========================================================
+# FOOTER
+# ==========================================================
+
+st.write("")
+st.divider()
 
 st.markdown(
     """
-    <div style="text-align:center;
-                color:gray;
-                font-size:14px;
-                margin-top:20px;">
-        © 2026 Male vs Female Eye Classification • All Rights Reserved
-    </div>
-    """,
+<div style="
+text-align:center;
+padding:20px;
+color:#94A3B8;
+font-size:15px;
+">
+
+Made with ❤️ using Streamlit & TensorFlow
+
+<br><br>
+
+© 2026 Male vs Female Eye Classification
+
+</div>
+""",
     unsafe_allow_html=True,
 )
